@@ -2,12 +2,11 @@
 /**
  * Contrôleur gérant ajout/suppression/affichage des utilisateurs avec leur groupe.
  */
-
-require_once ($_SERVER['DOCUMENT_ROOT']."/LexikPhp/include/class.pdolexik.php");
-require_once ($_SERVER['DOCUMENT_ROOT']."/LexikPhp/include/Groupe.php");
-require_once ($_SERVER['DOCUMENT_ROOT']."/LexikPhp/include/GroupeManager.php");
-require_once ($_SERVER['DOCUMENT_ROOT']."/LexikPhp/include/Utilisateur.php");
-require_once ($_SERVER['DOCUMENT_ROOT']."/LexikPhp/include/UtilisateurManager.php");
+require_once __DIR__.'/../include/class.pdolexik.php';
+require_once __DIR__.'/../include/Groupe.php';
+require_once __DIR__.'/../include/GroupeManager.php';
+require_once __DIR__.'/../include/Utilisateur.php';
+require_once __DIR__.'/../include/UtilisateurManager.php';
 
 $pdo = PdoLxk::getPdoLxk();
 $usrManager = new UtilisateurManager($pdo);
@@ -35,5 +34,5 @@ $grpUsr = $usrManager->getList();
 $grpManager = new GroupeManager($pdo);
 $grpListe = $grpManager->getList();
 
-include($_SERVER['DOCUMENT_ROOT']."/LexikPhp/vues/v_tableau.php");
+include __DIR__.'/../vues/v_tableau.php';
 ?>
